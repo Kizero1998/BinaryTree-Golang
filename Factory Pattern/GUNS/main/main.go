@@ -5,57 +5,60 @@ import (
 	"reflect"
 )
 
+
 type iGun interface {
 	setName(name string)
 	setPower(power int)
 	getName() string
 	getPower() int
 }
+var instance *iGun
 
-type gun struct {
+func newGun() *iGun{
+	if instance == nil{
+		instance = new(iGun)
+	}
+	return instance
+}
+
+type gunData struct {
 	name  string
 	power int
 }
 type ak47 struct {
-	gun
+	gunData
 }
 type maverick struct {
-	gun
+	gunData
 }
-func (g *gun) setName(name string) {
+func (g *gunData) setName(name string) {
 	g.name = name
 }
-
-func (g *gun) getName() string {
+func (g *gunData) getName() string {
 	return g.name
 }
-
-func (g *gun) setPower(power int) {
+func (g *gunData) setPower(power int) {
 	g.power = power
 }
-
-func (g *gun) getPower() int {
+func (g *gunData) getPower() int {
 	return g.power
 }
-
 func newAk47() iGun {
 	return &ak47{
-		gun: gun{
+		gunData: gunData{
 			name:  "AK47 gun",
 			power: 4,
 		},
 	}
 }
-
 func newMaverick() iGun {
 	return &maverick{
-		gun: gun{
+		gunData: gunData{
 			name:  "Maverick gun",
 			power: 5,
 		},
 	}
 }
-
 func getGun(gunType string) (iGun, error) {
 	if gunType == "ak47" {
 		return newAk47(), nil
