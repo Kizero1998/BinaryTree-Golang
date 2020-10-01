@@ -3,9 +3,7 @@ package main
 import (
 	"fmt"
 	"reflect"
-)
-
-
+	)
 type iGun interface {
 	setName(name string)
 	setPower(power int)
@@ -14,12 +12,6 @@ type iGun interface {
 }
 var instance *iGun
 
-func newGun() *iGun{
-	if instance == nil{
-		instance = new(iGun)
-	}
-	return instance
-}
 
 type gunData struct {
 	name  string
@@ -60,13 +52,17 @@ func newMaverick() iGun {
 	}
 }
 func getGun(gunType string) (iGun, error) {
-	if gunType == "ak47" {
-		return newAk47(), nil
+	if instance == nil{
+		if gunType == "ak47" {
+			return newAk47(), nil
+		}
+		if gunType == "maverick" {
+			return newMaverick(), nil
+		}
+		return nil, fmt.Errorf("Wrong gun type passed!")
+		instance = new(iGun)
 	}
-	if gunType == "maverick" {
-		return newMaverick(), nil
-	}
-	return nil, fmt.Errorf("Wrong gun type passed!")
+	return getGun(gunType)
 }
 func printDetails(g iGun ){
 	t := reflect.TypeOf(g)
@@ -99,6 +95,5 @@ func main() {
 	maverick, _ := getGun("maverick")
 	printDetails(ak47)
 	printDetails(maverick)
-
 }
 
