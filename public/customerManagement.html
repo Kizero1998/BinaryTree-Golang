@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Customer</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="home.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body class="body">
+            <div class="navbar">
+
+      <div class="dropdown">
+          <img src="menu.jpg" alt="" width="9" height="9">
+        <button class="dropbtn">Menu home
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <b>Switch to</b>
+          <a href="#"><img src="https://www.computerhope.com/issues/pictures/new-win-logo.gif"width="20px" height="20px" align="left">GROUP</a>
+          <a href="#"><img src="https://cdn1.iconfinder.com/data/icons/business-set-18/32/2.business-icons-final-24-512.png"width="20px" height="20px" align="left">CONFLUENCE</a>
+          <a href="#"><img src="https://previews.123rf.com/images/ahasoft2000/ahasoft20001702/ahasoft2000170207249/71921970-gear-icon-vector-illustration-style-is-flat-iconic-symbol-black-color-transparent-background-designe.jpg"width="20px" height="20px" align="left">ADMINISTRATION</a>
+        </div>
+      </div>
+
+      <a><img src="https://img.icons8.com/ios/452/cloud.png" alt="" width="20px" height="20px" align="center"> QUẢN LÝ CÔNG VIỆC</a>
+
+      <a href="home.html">Home Page</a>
+      <div class="dropdown">
+        <button class="dropbtn">Group
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+        <div class="dropdown">
+        <button class="dropbtn">Project
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+        <div class="dropdown">
+        <button class="dropbtn">Filter
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+      <a><img src="https://image.flaticon.com/icons/png/512/14/14558.png" alt="Chat"width="20px" align="center" height="20px">Chat</a>
+      <a href="customerManagement.html"><img src="https://img.pngio.com/icon-customer-293194-free-icons-library-customer-icon-png-980_916.jpg" align="center" alt="Customer" width="20px" height="20px">Customer</a>
+      <div class="behindsearchbar">
+     <a><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-bell-512.png" alt="bell" width="20px" height="20px""></a>
+     <a><img src="https://cdn3.iconfinder.com/data/icons/miscellaneous-15/100/Gear-512.png" alt="gear" width="20px" height="20px"></a>
+     <a><img src="https://i.pinimg.com/originals/0c/3b/3a/0c3b3adb1a7530892e55ef36d3be6cb8.png" alt="user" width="20px" height="20px"></a>
+     </div>
+      <input class="search" id="search" type="search" placeholder="Search...">
+
+    </div>
+        <br/>
+        <label style="margin-left: 20px"><b>CUSTOMER MANAGEMENT</b></label>
+        <br/>
+        
+        <div style="float: left; margin-left: 20px">      
+        <button align="center" width="15px" class="open-button" onclick="openForm1()"><b>+</b>Add Customer
+        </button>
+
+        <div class="form-popup" id="myForm1">
+          <form action="/action_page.php" class="form-container">              
+            <label><b>CREATE CUSTOMER DETAIL</b></label>
+           
+<!--            <label for="avatar">Avatar</label>
+            <input type="image" placeholder="Upload Avatar" name="avatar" required>
+            
+            <script src="Upload_avatar.js"></script>-->
+<br/>
+
+<label><b>Avatar</b></label>
+            <div style="inline">
+                <span class="inline">   
+                <div id="imgFileUpload"> 
+                <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)"style="text-align: center;"  />
+                <p style="text-align: center"><img id="output" width="200"/></p>
+                </div>
+<!--            <span id="spnFilePath"></span>-->
+                      <input type="file" id="FileUpload1" style="display: none" />
+                </span>
+
+            </div>
+
+            <div>
+                <span 
+                <label for="username"><b>Username</b></label>
+                <input type="text" placeholder="Enter user name" name="username" required style=" margin: 5px 0px 22px 44px;">       
+                </span>
+             </div>
+            <div>
+                <span 
+                <label for="gender"><b>Gender</b></label>
+                    <select type="dropdown" placeholder="Enter your gender" name="gender" required style=" margin: 5px 0px 22px 65px;">
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+                </span>
+            </div>
+
+            <div><span class="inline" 
+                    <label for="birthdate"><b>Birth date</b></label>
+            <input type="date" id="birthdate"  value="empty" min="1900-01-01" max="2100-12-31" name="birthdate" required style=" margin: 5px 0px 22px 47px;">
+
+            </span> 
+            </div>
+            <div><span class="inline"      
+                 <label for="address"><b>Address</b></label>
+                <input type="text" placeholder="Enter address" name="address" required style=" margin: 5px 0px 22px 57px;"> 
+            </span>
+            </div>
+                    <div><span class="inline" 
+                     <label for="linkfacebook"><b>Facebook page</b></label>
+            <input type="link" placeholder="Enter link to facebook" name="linkfacebook" required style="margin: 5px 0px 22px 5px;"> 
+
+                </span> </div>
+            <div><span class="inline"        
+                    <label for="linkinstagram"><b>Instagram page</b></label>
+            <input type="link" placeholder="Enter link to instagram" name="linkinstagram" required style="margin: 5px 0px 22px 5px;"> 
+</span> </div>
+            <div><span class="inline"         
+                    <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required style="  margin: 5px 0px 22px 80px;">
+            </span> </div>
+            <div><span class="inline"      
+                    <label for="loyal"><b>Loyal</b></label>
+            <select type="dropdown" placeholder="not updated" name="loyal" required style="margin: 5px 0px 22px 80px;">
+                <option>Yes</option>
+                <option>No</option>
+            </select></span> 
+            </div>
+
+            <div>         
+                <span class="inline" >
+             <input type="text" placeholder="Enter title" name="title" required style="width: 12%;margin: 0px 0px 0px 0px;">
+             <input type="text" placeholder="Enter content" name="content" style="width:80%;margin: 5px 0px 22px 5px;"> 
+                </span>
+
+            </div>
+<div style="margin: 0 0 0 125px">
+                <button type="button" class="add data" onclick=""><b>+</b>Add data</button>
+            </div>
+            <br/>
+
+   
+    
+            <button type="submit" class="btn">Create</button>
+            <button type="button" class="btn cancel" onclick="closeForm1()">Close</button>
+          </form>
+        </div>
+            
+<button align="center" width="15px" class="open-button" onclick="openForm2()"><b>+</b>Update member loyal</button>
+        <div class="form-popup" id="myForm2">
+          <form action="/action_page.php" class="form-container">              
+            <label><b>CUSTOMER DETAIL</b></label>
+           
+<!--            <label for="avatar">Avatar</label>
+            <input type="image" placeholder="Upload Avatar" name="avatar" required>
+            
+            <script src="Upload_avatar.js"></script>-->
+<br/>
+
+<label><b>Avatar</b></label>
+            <div style="inline">
+                <span class="inline">   
+                <div id="imgFileUpload"> 
+                <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)"style="text-align: center;"  />
+                <p style="text-align: center"><img id="output" width="200"/></p>
+                </div>
+<!--            <span id="spnFilePath"></span>-->
+                      <input type="file" id="FileUpload1" style="display: none" />
+                </span>
+
+            </div>
+
+            <div>
+                <span 
+                <label for="username"><b>Username</b></label>
+                <input type="text" placeholder="Enter user name" name="username" required style=" margin: 5px 0px 22px 44px;">       
+                </span>
+             </div>
+            <div>
+                <span 
+                <label for="gender"><b>Gender</b></label>
+                    <select type="dropdown" placeholder="Enter your gender" name="gender" required style=" margin: 5px 0px 22px 65px;">
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+                </span>
+            </div>
+
+            <div><span class="inline" 
+                    <label for="birthdate"><b>Birth date</b></label>
+            <input type="date" id="birthdate"  value="empty" min="1900-01-01" max="2100-12-31" name="birthdate" required style=" margin: 5px 0px 22px 47px;">
+
+            </span> 
+            </div>
+            <div><span class="inline"      
+                 <label for="address"><b>Address</b></label>
+                <input type="text" placeholder="Enter address" name="address" required style=" margin: 5px 0px 22px 57px;"> 
+            </span>
+            </div>
+                    <div><span class="inline" 
+                     <label for="linkfacebook"><b>Facebook page</b></label>
+            <input type="link" placeholder="Enter link to facebook" name="linkfacebook" required style="margin: 5px 0px 22px 5px;"> 
+
+                </span> </div>
+            <div><span class="inline"        
+                    <label for="linkinstagram"><b>Instagram page</b></label>
+            <input type="link" placeholder="Enter link to instagram" name="linkinstagram" required style="margin: 5px 0px 22px 5px;"> 
+</span> </div>
+            <div><span class="inline"         
+                    <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required style="  margin: 5px 0px 22px 80px;">
+            </span> </div>
+            <div><span class="inline"      
+                    <label for="loyal"><b>Loyal</b></label>
+            <select type="dropdown" placeholder="not updated" name="loyal" required style="margin: 5px 0px 22px 80px;">
+                <option>Yes</option>
+                <option>No</option>
+            </select></span> 
+            </div>
+
+            <div>         
+                <span class="inline" >
+             <input type="text" placeholder="Enter title" name="title" required style="width: 12%;margin: 0px 0px 0px 0px;">
+             <input type="text" placeholder="Enter content" name="content" style="width:80%;margin: 5px 0px 22px 5px;"> 
+                </span>
+
+            </div>
+<div style="margin: 0 0 0 125px">
+                <button type="button" class="add data" onclick=""><b>+</b>Add data</button>
+            </div>
+            <br/>
+
+            <button type="submit" class="btn">Save changes</button>
+            <button type="button" class="btn cancel" onclick="closeForm2()">Close</button>
+
+          </form>
+        </div>
+        </div>
+        
+        
+        
+        
+        
+        <div style="float: right; margin-right: 20px"> 
+            <button><img src="https://cdn3.iconfinder.com/data/icons/notes-2/26/notes007-512.png" align="center" width="15px"> Export</button>
+            <button><img src="https://cdn3.iconfinder.com/data/icons/notes-2/26/notes007-512.png" align="center"width="15px"> Import</button>
+        </div>
+        <br/>
+        <br/>
+        <a style="text-align: right; float:right; margin-right: 20px" href="downloadtemplate?"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSEp0RMMqd4sDr19QbmQzxMSW7Z0pouzEON8A&usqp=CAU" width="20px" height="20px" align="center">Download<br/> template</a>
+        <br/>
+        <br/>
+        <table style="margin: 20px" border="1" cellspacing="0" cellpadding="20">
+            <thead>
+                <tr style="background-color: gray">
+                    <th></th>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Phone number</th>
+                    <th>Gmail</th>
+                    <th>Birth date</th>
+                    <th>Gender</th>
+                    <th>Loyal</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody align="center">
+                <tr>
+                    <td></td>
+                    <td width="10%"><input type="text" name="id" value=""/></td>
+                    <td width="10%"><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="phone" value="" /></td>
+                    <td><input type="text" name="gmail" value="" /></td>
+                    <td><table>
+                            <thead>
+                                <tr>
+                                    <th>
+    <!--                                    <label for="start">From:</label>-->
+                            <input type="date" id="birthdate" name="Birthdate" value="empty" min="1900-01-01" max="2100-12-31">
+                                    </th>
+                                </tr>
+                            </thead>
+                        </table></td>
+                    <td><select name="gender">
+                            <option>Male</option>
+                            <option>Female</option>
+                        </select></td>
+                        <td><select name="loyal">
+                                <option>Yes</option>
+                                <option>No</option>
+                            </select></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>012345</td>
+                    <td>Linh Giang</td>
+                    <td>0372741417</td>
+                    <td>linhgiang@gmail.com</td>
+                    <td>12/08/1998</td>
+                    <td>Female</td>
+                    <td>Yes</td>
+                    <td><a href="Edit"><img src="https://toppng.com/uploads/preview/user-edit-icon-edit-icon-white-11553486095hpvoxaoebd.png"width="20px" align="center"></a><a href="Delete"><img src="https://cdn4.iconfinder.com/data/icons/social-messaging-ui-coloricon-1/21/52-512.png"width="20px" align="center"></a></td>
+                </tr>
+                                <tr>
+                    <td></td>
+                    <td>012345</td>
+                    <td>Linh Giang</td>
+                    <td>0372741417</td>
+                    <td>linhgiang@gmail.com</td>
+                    <td>12/08/1998</td>
+                    <td>Female</td>
+                    <td>Yes</td>
+                    <td><a href="Edit"><img src="https://toppng.com/uploads/preview/user-edit-icon-edit-icon-white-11553486095hpvoxaoebd.png"width="20px" align="center"></a><a href="Delete"><img src="https://cdn4.iconfinder.com/data/icons/social-messaging-ui-coloricon-1/21/52-512.png"width="20px" align="center"></a></td>
+                </tr>
+                                <tr>
+                    <td></td>
+                    <td>012345</td>
+                    <td>Linh Giang</td>
+                    <td>0372741417</td>
+                    <td>linhgiang@gmail.com</td>
+                    <td>12/08/1998</td>
+                    <td>Female</td>
+                    <td>Yes</td>
+                    <td><a href="Edit"><img src="https://toppng.com/uploads/preview/user-edit-icon-edit-icon-white-11553486095hpvoxaoebd.png"width="20px" align="center"></a><a href="Delete"><img src="https://cdn4.iconfinder.com/data/icons/social-messaging-ui-coloricon-1/21/52-512.png"width="20px" align="center"></a></td>
+                </tr>
+                                <tr>
+                    <td></td>
+                    <td>012345</td>
+                    <td>Linh Giang</td>
+                    <td>0372741417</td>
+                    <td>linhgiang@gmail.com</td>
+                    <td>12/08/1998</td>
+                    <td>Female</td>
+                    <td>Yes</td>
+                    <td><a href="Edit"><img src="https://toppng.com/uploads/preview/user-edit-icon-edit-icon-white-11553486095hpvoxaoebd.png"width="20px" align="center"></a><a href="Delete"><img src="https://cdn4.iconfinder.com/data/icons/social-messaging-ui-coloricon-1/21/52-512.png"width="20px" align="center"></a></td>
+                </tr>
+                                <tr>
+                    <td></td>
+                    <td>012345</td>
+                    <td>Linh Giang</td>
+                    <td>0372741417</td>
+                    <td>linhgiang@gmail.com</td>
+                    <td>12/08/1998</td>
+                    <td>Female</td>
+                    <td>Yes</td>
+                    <td><a href="Edit"><img src="https://toppng.com/uploads/preview/user-edit-icon-edit-icon-white-11553486095hpvoxaoebd.png"width="20px" align="center"></a><a href="Delete"><img src="https://cdn4.iconfinder.com/data/icons/social-messaging-ui-coloricon-1/21/52-512.png"width="20px" align="center"></a></td>
+                </tr>                <tr>
+                    <td></td>
+                    <td>012345</td>
+                    <td>Linh Giang</td>
+                    <td>0372741417</td>
+                    <td>linhgiang@gmail.com</td>
+                    <td>12/08/1998</td>
+                    <td>Female</td>
+                    <td>Yes</td>
+                    <td><a href="Edit"><img src="https://toppng.com/uploads/preview/user-edit-icon-edit-icon-white-11553486095hpvoxaoebd.png"width="20px" align="center"></a><a href="Delete"><img src="https://cdn4.iconfinder.com/data/icons/social-messaging-ui-coloricon-1/21/52-512.png"width="20px" align="center"></a></td>
+                </tr>
+                
+                                <tr>
+                    <td></td>
+                    <td>012345</td>
+                    <td>Linh Giang</td>
+                    <td>0372741417</td>
+                    <td>linhgiang@gmail.com</td>
+                    <td>12/08/1998</td>
+                    <td>Female</td>
+                    <td>Yes</td>
+                    <td><a href="Edit"><img src="https://toppng.com/uploads/preview/user-edit-icon-edit-icon-white-11553486095hpvoxaoebd.png"width="20px" align="center"></a><a href="Delete"><img src="https://cdn4.iconfinder.com/data/icons/social-messaging-ui-coloricon-1/21/52-512.png"width="20px" align="center"></a></td>
+                </tr>
+                
+                
+
+            </tbody>
+        </table>
+
+    </body>
+    <script>
+        
+function openForm1() {
+  document.getElementById("myForm1").style.display = "block";
+  
+}
+
+function closeForm1() {
+  document.getElementById("myForm1").style.display = "none";
+
+}
+function openForm2(){
+    document.getElementById("myForm2").style.display = "block";
+}
+
+function closeForm2(){
+      document.getElementById("myForm2").style.display = "none";
+      
+}
+var loadFile = function(event) {
+	var image = document.getElementById('output');
+	image.src = URL.createObjectURL(event.target.files[0]);
+}
+
+
+    </script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+
+    </script>
+    <script type="text/javascript">
+//        $(function () {
+//        var fileupload = $("#FileUpload1");
+//        var filePath = $("#spnFilePath");
+//        var image = $("#imgFileUpload");
+//        image.click(function () {
+//            fileupload.click();
+//        });
+//        fileupload.change(function () {
+//            var fileName = $(this).val().split('\\')[$(this).val().split('\\').length - 1];
+//            filePath.html("<b>Selected File: </b>" + fileName);
+//        });
+//    });
+</script>
+</html>
